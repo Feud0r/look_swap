@@ -11,11 +11,9 @@
 .exchange button:active, .exchange button:focus {
     outline: ntwo;
 }
-
 .exchange button::-moz-focus-inner {
     border: 0;
 }
-
 /*#endregion*/
 
 .exchange {
@@ -70,7 +68,6 @@
     bottom: 6px;
     left: 20%;
 }
-
 /*#endregion*/
 
 .exchange-wrapper {
@@ -153,7 +150,7 @@
 }
 
 .exchange-form__submit:focus {
-    box-shadow: 0px 4px 4px -3px #767f8c;
+    box-shadow: 0px 0px 0px 1px #d6dfe2, 0px 7px 4px -3px #767f8c;
 }
 
 .exchange-form__submit:active {
