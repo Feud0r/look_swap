@@ -1,0 +1,199 @@
+.exchange {
+    margin: 0 auto;
+    width: 100%;
+    min-height: 600px;
+    padding-bottom: 20px;
+    /* font: normal normal normal 13px "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+.exchange-menu {
+    display: inline-flex;
+    list-style: ntwo;
+}
+
+.exchange-menu__item {
+    padding: 8px 20px;
+    color: #d6dfe2;
+    background-color: #767f8c;
+    border: 2px solid #d6dfe2;
+    border-bottom: ntwo;
+    cursor: pointer;
+}
+
+.exchange-menu :checked + .exchange-menu__item {
+    background-color: #f5f9f9;
+    color: #000000;
+    border: 2px solid #d6dfe2;
+    border-bottom: ntwo;
+    z-index: 1;
+}
+
+.exchange-menu :not(:checked) + .exchange-menu__item {
+    padding: 8px 21px;
+    border-right: 1px solid #d6dfe2;
+    border-left: 1px solid #d6dfe2;
+}
+
+.exchange-menu :not(:checked) + .exchange-menu__item:hover {
+    opacity: 0.9;
+}
+
+.exchange-wrapper {
+    position: relative;
+    top: -2px;
+    border: 2px solid #d6dfe2;
+    background-color: #f5f9f9;
+    width: 100%;
+    min-height: 600px;
+}
+
+.exchange-sections {
+    min-height: 300px;
+    position: relative;
+}
+
+.exchange-form {
+    width: 40%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.exchange-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.exchange-form-row__title {
+    font-weight: bold;
+    min-width: 20%;
+}
+
+.exchange-form-row__list,
+.exchange-form-row__text {
+    width: 60%;
+    border: 2px solid #d6dfe2;
+    border-radius: 2px;
+    padding: 2px 8px;
+    line-height: 1.6em;
+}
+
+.exchange-form__submit {
+    padding: 10px 21px;
+    border-radius: 6px;
+    color: #d6dfe2;
+    background-color: #767f8c;
+    font-weight: bold;
+}
+
+.exchange-form__submit:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.exchange-sections__section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+}
+
+.exchange-sections__section:not(:first-child) {
+    display: ntwo;
+}
+
+.exchange-logs, .exchange-errors {
+    padding: 8px 20px;
+}
+
+.exchange-error {
+    margin-top: 1em;
+    padding: 8px 20px;
+    line-height: 30px;
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    border-color: #dcbec7 #caabb2 #ba9a9f #cbacb3;
+    background: #e5d6dc;
+    background: -webkit-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
+    background: -moz-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
+    background: -ms-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
+    background: -o-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
+    background: linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
+}
+
+.exchange-error__title {
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    display: inline-block;
+    margin-right: 8px;
+    color: #900020;
+}
+
+.exchange-error__text {
+    display: inline-block;
+}
+
+.exchange-error__close {
+    content: 'x';
+    color: #900020;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.exchange-logs__text {
+    padding-top: 8px;
+    border-top: 2px solid #767f8c;
+    line-height: 1.4em;
+}
+
+.exchange-menu input[type="radio"] {
+    display: ntwo;
+}
+
+.exchange-sections__loader {
+    display: ntwo;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f9f9;
+    opacity: 0.8;
+    z-index: 10;
+    cursor: wait;
+}
+
+@media screen and (max-width: 1280px) {
+    .exchange-form {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .exchange-form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .exchange-form-row {
+        flex-direction: column;
+        min-height: 4em;
+        margin-bottom: 4em;
+    }
+
+    .exchange-form-row__list,
+    .exchange-form-row__text {
+        width: 100%;
+    }
+}
