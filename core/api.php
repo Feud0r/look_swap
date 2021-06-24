@@ -10,5 +10,5 @@ if (isset($_POST['saveSettings'])) {
     if (!$file["title"]) die('Введите заголовок от 3 до 30 символов (буквы, пробел, подчеркивание).');
     if (!$file["path_to_1c_exchange"]) die('Файл обмена не найден.');
 
-    if (!file_put_contents('../settings.json', json_encode($file, JSON_PRETTY_PRINT))) die('Не удалось записать файл, проверьте права.');
+    if (!file_put_contents('../settings.json', json_encode($file, JSON_PRETTY_PRINT))) die('Не удалось записать файл settings.json, проверьте права.');
 };

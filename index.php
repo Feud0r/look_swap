@@ -5,11 +5,11 @@
     <div class="exchange">
         <div class="exchange-menu">
             <input type="radio" id="main" name="tab" checked>
-            <label for="main" class="exchange-menu__item">
+            <label for="main" class="exchange-menu__item" tabindex="0">
                 Обмен
             </label>
             <input type="radio" id="settings" name="tab">
-            <label for="settings" class="exchange-menu__item">
+            <label for="settings" class="exchange-menu__item" tabindex="0">
                 Настройки
             </label>
         </div>
@@ -37,7 +37,7 @@
                                 </select>
                             </div>
                         </div>
-                        <input type="submit" class="exchange-form__submit" value="Begin swap">
+                        <button type="submit" class="exchange-form__submit">Begin swap</button>
                     </form>
                 </section>
 
@@ -54,7 +54,7 @@
                                 <input type="text" name="exchange_file_path" class="exchange-form-row__text" value="">
                             </div>
                         </div>
-                        <input type="submit" class="exchange-form__submit" value="Сохранить">
+                        <button type="submit" class="exchange-form__submit">Сохранить</button>
                     </form>
                 </section>
 

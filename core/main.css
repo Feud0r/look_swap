@@ -1,11 +1,32 @@
+/*#region normallize*/
+.exchange * {
+    margin: 0;
+    padding: 0;
+}
+
+.exchange *, .exchange *:before, .exchange *:after {
+    box-sizing: border-box;
+}
+
+.exchange button:active, .exchange button:focus {
+    outline: ntwo;
+}
+
+.exchange button::-moz-focus-inner {
+    border: 0;
+}
+
+/*#endregion*/
+
 .exchange {
     margin: 0 auto;
     width: 100%;
     min-height: 600px;
     padding-bottom: 20px;
-    /* font: normal normal normal 13px "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font: normal normal normal 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/*#region tabs*/
 .exchange-menu {
     display: inline-flex;
     list-style: ntwo;
@@ -18,6 +39,8 @@
     border: 2px solid #d6dfe2;
     border-bottom: ntwo;
     cursor: pointer;
+    outline: ntwo;
+    position: relative;
 }
 
 .exchange-menu :checked + .exchange-menu__item {
@@ -38,6 +61,18 @@
     opacity: 0.9;
 }
 
+.exchange-menu__item:focus::after {
+    content: "";
+    background-color: #d6dfe2;
+    width: 60%;
+    height: 2px;
+    position: absolute;
+    bottom: 6px;
+    left: 20%;
+}
+
+/*#endregion*/
+
 .exchange-wrapper {
     position: relative;
     top: -2px;
@@ -52,35 +87,54 @@
     position: relative;
 }
 
-.exchange-form {
-    width: 40%;
+.exchange-sections__section {
+    position: absolute;
     height: 100%;
-    margin: auto;
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+    display: flex;
+}
+
+.exchange-sections__section:not(:first-child) {
+    display: ntwo;
+}
+
+.exchange-form {
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: auto;
 }
 
 .exchange-form-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 2em;
 }
 
 .exchange-form-row__title {
     font-weight: bold;
-    min-width: 20%;
+    padding: 1em 1em 1em 0;
 }
 
 .exchange-form-row__list,
 .exchange-form-row__text {
-    width: 60%;
     border: 2px solid #d6dfe2;
     border-radius: 2px;
     padding: 2px 8px;
     line-height: 1.6em;
+    outline: ntwo;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.exchange-form-row__list:focus,
+.exchange-form-row__text:focus {
+    box-shadow: 0px 3px 6px -3px #767f8c;
 }
 
 .exchange-form__submit {
@@ -89,6 +143,8 @@
     color: #d6dfe2;
     background-color: #767f8c;
     font-weight: bold;
+    border: ntwo;
+    outline: ntwo;
 }
 
 .exchange-form__submit:hover {
@@ -96,15 +152,12 @@
     cursor: pointer;
 }
 
-.exchange-sections__section {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    padding: 20px 20px 0px 20px;
+.exchange-form__submit:focus {
+    box-shadow: 0px 4px 4px -3px #767f8c;
 }
 
-.exchange-sections__section:not(:first-child) {
-    display: ntwo;
+.exchange-form__submit:active {
+    background-color: #747d8a;
 }
 
 .exchange-logs, .exchange-errors {
@@ -128,7 +181,7 @@
 }
 
 .exchange-error__title {
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: 0.2px;
     display: inline-block;
     margin-right: 8px;
@@ -149,7 +202,19 @@
     right: 0;
     cursor: pointer;
     line-height: 20px;
-    font-weight: 700;
+    font-weight: 800;
+    border: 0;
+    background-color: transparent;
+}
+
+.exchange-error__close:focus::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #767f8c;
 }
 
 .exchange-logs__text {
@@ -171,29 +236,4 @@
     opacity: 0.8;
     z-index: 10;
     cursor: wait;
-}
-
-@media screen and (max-width: 1280px) {
-    .exchange-form {
-        width: 60%;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .exchange-form {
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .exchange-form-row {
-        flex-direction: column;
-        min-height: 4em;
-        margin-bottom: 4em;
-    }
-
-    .exchange-form-row__list,
-    .exchange-form-row__text {
-        width: 100%;
-    }
 }
