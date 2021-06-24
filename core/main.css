@@ -3,11 +3,9 @@
     margin: 0;
     padding: 0;
 }
-
-.exchange *, .exchange *:before, .exchange *:after {
+.exchange *, .exchange *:before, .exchange *:after{
     box-sizing: border-box;
 }
-
 .exchange button:active, .exchange button:focus {
     outline: ntwo;
 }
@@ -41,7 +39,7 @@
     position: relative;
 }
 
-.exchange-menu :checked + .exchange-menu__item {
+.exchange-menu :checked+.exchange-menu__item {
     background-color: #f5f9f9;
     color: #000000;
     border: 2px solid #d6dfe2;
@@ -49,17 +47,17 @@
     z-index: 1;
 }
 
-.exchange-menu :not(:checked) + .exchange-menu__item {
+.exchange-menu :not(:checked)+.exchange-menu__item {
     padding: 8px 21px;
     border-right: 1px solid #d6dfe2;
     border-left: 1px solid #d6dfe2;
 }
 
-.exchange-menu :not(:checked) + .exchange-menu__item:hover {
+.exchange-menu :not(:checked)+.exchange-menu__item:hover {
     opacity: 0.9;
 }
 
-.exchange-menu__item:focus::after {
+.exchange-menu__item:focus::after{
     content: "";
     background-color: #d6dfe2;
     width: 60%;
@@ -170,11 +168,11 @@
     position: relative;
     border-color: #dcbec7 #caabb2 #ba9a9f #cbacb3;
     background: #e5d6dc;
-    background: -webkit-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
-    background: -moz-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
-    background: -ms-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
-    background: -o-linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
-    background: linear-gradient(top, rgba(241, 195, 206, .3), rgba(232, 162, 178, .3), rgba(223, 126, 148, .3));
+    background: -webkit-linear-gradient(top, rgba(241,195,206,.3), rgba(232,162,178,.3), rgba(223,126,148,.3));
+    background: -moz-linear-gradient(top, rgba(241,195,206,.3), rgba(232,162,178,.3), rgba(223,126,148,.3));
+    background: -ms-linear-gradient(top, rgba(241,195,206,.3), rgba(232,162,178,.3), rgba(223,126,148,.3));
+    background: -o-linear-gradient(top, rgba(241,195,206,.3), rgba(232,162,178,.3), rgba(223,126,148,.3));
+    background: linear-gradient(top, rgba(241,195,206,.3), rgba(232,162,178,.3), rgba(223,126,148,.3));
 }
 
 .exchange-error__title {

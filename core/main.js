@@ -4,9 +4,7 @@ function loadPage() {
         type: 'POST',
         url: './core/api.php',
         data: 'getSettings',
-        success: response => {
-            buildPage(JSON.parse(response));
-        }
+        success: response => { buildPage(JSON.parse(response)); }
     });
 }
 
@@ -16,17 +14,18 @@ function buildPage(settings) {
     $('input[name="exchange_file_path"]').val(settings.path_to_1c_exchange);
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     loadPage();
 });
 //endregion
 
 
 //region Обмен
-$('form[name="main"]').on("submit", function (e) {
+$('form[name="main"]').on("submit", function(e) {
     e.preventDefault();
     if ($(this.file).val() === null) return showError('Отсутствует файл. Загрузиге xml файл в /upload/1c_catalog/ и перезагрузите страницу.');
     $('.exchange-sections__loader').show();
+    $('.exchange-logs__text').html('');
     exchange($(this.file).val(), $(this.params).val());
 });
 
@@ -35,7 +34,7 @@ function exchange(filename, type) {
         type: 'GET',
         url: $('input[name="exchange_file_path"]').val(),
         data: {
-            "filename": filename,
+            "filename" : filename,
             "type": type,
             "mode": "import",
         },
@@ -51,15 +50,15 @@ function exchange(filename, type) {
 
 
 //region form of settings
-$('form[name="settings"]').on("submit", function (e) {
+$('form[name="settings"]').on("submit", function(e) {
     e.preventDefault();
     $.ajax({
         type: 'POST',
         url: './core/api.php',
         data: {
-            'saveSettings': true,
-            'title': $(this.title).val().trim(),
-            'file_path': $(this.exchange_file_path).val().trim(),
+            'saveSettings' : true,
+            'title' : $(this.title).val().trim(),
+            'file_path' : $(this.exchange_file_path).val().trim(),
         },
         success: response => {
             if (response !== '') {
@@ -97,7 +96,5 @@ function showError(error) {
             <button aria-label="Закрыть" class="exchange-error__close">x</button>
         </div>
     `);
-    $('.exchange-error__close').off("click").on("click", function () {
-        $(this).parent().remove();
-    });
+    $('.exchange-error__close').off("click").on("click", function() { $(this).parent().remove(); });
 }
