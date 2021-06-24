@@ -1,4 +1,6 @@
 <?
-$sSectionName = "Swap manual";
-$arDirProperties = array();
+$sSectionName = "Begin swap";
+$arDirProperties = Array(
+
+);
 ?>
