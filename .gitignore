@@ -43,6 +43,7 @@ cgi-bin/
 
 # IDE
 .idea
+.idea/*
 nbproject
 .buildpath
 .project
